@@ -58,7 +58,7 @@ function showSearchedResults(searchedHero) {
 
      // iterating the searchedHero array using for loop
      for (const key in searchedHero) {
-          // if count <= 5 then only we display it in dom other results are discarded
+          // if count <= 10 then only we display it in dom other results are discarded
           if (count <= 10) {
                // getting the single hero 
                // hero is the object that we get from API
