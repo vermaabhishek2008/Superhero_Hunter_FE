@@ -38,17 +38,16 @@ async function searchHeros(textSearched) {
 function showSearchedResults(searchedHero) {
 
 
-     // IDs of the character which are added in the favourites 
-     // Used for displaying the appropriate button in search results i.e
-     // if the id exist in this array then we display "Remove from favourites" button otherwise we display "Add to favourites button"
-     // favouritesCharacterIDs is a map which contains id of character as key and true as value 
+     // IDs of the character which are added in the favourites used for displaying the appropriate button in search results i.e.
+     //If the id exists in this array then we display the "Remove from favourites" button otherwise we display the "Add to favourites button"
+     // favouritesCharacterIDs is a map which contains the id of the character as  key and true as value 
      let favouritesCharacterIDs = localStorage.getItem("favouritesCharacterIDs");
      if(favouritesCharacterIDs == null){
-          // If we did't got the favouritesCharacterIDs then we iniitalize it with empty map
+          // If we don't got the favouritesCharacterIDs then we iniitalize it with empty map
           favouritesCharacterIDs = new Map();
      }
      else if(favouritesCharacterIDs != null){
-          // If the we got the favouritesCharacterIDs in localStorage then parsing it and converting it to map
+          // If we get the favouritesCharacterIDs in localStorage then parsing it and converting it to map
           favouritesCharacterIDs = new Map(JSON.parse(localStorage.getItem("favouritesCharacterIDs")));
      }
 
@@ -58,8 +57,8 @@ function showSearchedResults(searchedHero) {
 
      // iterating the searchedHero array using for loop
      for (const key in searchedHero) {
-          // if count <= 5 then only we display it in dom other results are discarded
-          if (count <= 5) {
+          // if count <= 10 then only we display it in dom other results are discarded
+          if (count <= 10) {
                // getting the single hero 
                // hero is the object that we get from API
                let hero = searchedHero[key];
